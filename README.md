@@ -2,7 +2,7 @@
 
 This is a basic Hello World program. I created this program to demonstrate the use of Visual Studio Code, Github, JavaScript and little of HTML and CSS and how this could work together. 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.youtube.com/watch?v=Wsesj55nmkw)
 
 # Development Environment
 
