@@ -18,15 +18,18 @@ for (let i = 0; i < dropList.length; i++) {
         dropList[i].insertAdjacentHTML("beforeend", optionTag);
     }
     dropList[i].addEventListener("change", e => {
-        loadFlag(e.target); // Calling loadFlag with passing target element as an argument
+        // Calling loadFlag with passing target element as an argument
+        loadFlag(e.target);
     });
 }
 
 function loadFlag(element) {
     // Loop over the keys of the country_code object
     for (let code in country_code) {
-        if (code == element.value) {  // If currency code matches the option value
-            let imgTag = element.parentElement.querySelector("img");  // Select the img tag
+        if (code == element.value) {  
+            // If currency code matches the option value
+            let imgTag = element.parentElement.querySelector("img");  
+            // Select the img tag
             // Set the image source dynamically based on the country code
             imgTag.src = `https://flagsapi.com/${country_code[code]}/flat/64.png`;
         }
@@ -38,17 +41,23 @@ window.addEventListener("load", () => {
 });
 
 getButton.addEventListener("click", e => {
-    e.preventDefault(); // Preventing form from submitting 
+    // Preventing form from submitting 
+    e.preventDefault();
     getExchangeRate();
 });
 
 const exchangeIcon = document.querySelector(".drop-list .icon");
 exchangeIcon.addEventListener("click", () => {
-    let tempCode = fromCurrency.value; // Temporary currency code of FROM drop list
-    fromCurrency.value = toCurrency.value // Passing TO currency code to FROM currency code
-    toCurrency.value = tempCode; // Passing temporary currency code to TO currency code
-    loadFlag(fromCurrency); // Calling loadFlag with passing select element (fromCurrency) of FROM
-    loadFlag(toCurrency); // Calling loadFlag with passing select element (toCurrency) of TO
+    // Temporary currency code of FROM drop list
+    let tempCode = fromCurrency.value;
+    // Passing TO currency code to FROM currency code
+    fromCurrency.value = toCurrency.value 
+    // Passing temporary currency code to TO currency code
+    toCurrency.value = tempCode;
+    // Calling loadFlag with passing select element (fromCurrency) of FROM
+    loadFlag(fromCurrency);
+    // Calling loadFlag with passing select element (toCurrency) of TO
+    loadFlag(toCurrency);
     getExchangeRate();
 });
 
