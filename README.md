@@ -4,6 +4,8 @@ This is a basic Hello World program. I created this program to demonstrate the u
 
 [Software Demo Video](https://www.youtube.com/watch?v=Wsesj55nmkw)
 
+This is a Currency Converter program developed with Javascript, HTML and CSS, we also use Visual Studio Code and Github to publish the program in a public repository, we developed this program with the intention to provide with a efficient and easy way to convert between different currencies based on exchange rates. 
+
 [Software Video (4-5 Minutes Video)](https://www.youtube.com/watch?v=Wsesj55nmkw)
 
 
