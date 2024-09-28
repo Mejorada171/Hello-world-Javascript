@@ -12,7 +12,7 @@ for (let i = 0; i < dropList.length; i++) {
         } else if (i == 1) {
             selected = currency_code == "NPR" ? "selected" : "";
         }
-        // Creating option tag with passing currency cose as a text and value
+        // Creating option tag with passing currency code as a text and value
         let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
         // Inserting options tag inside select tag
         dropList[i].insertAdjacentHTML("beforeend", optionTag);
@@ -65,15 +65,15 @@ function getExchangeRate() {
 
     exchangeRateTxt.innerHTML = "Getting exchange rate...";
 
-    // Replace YOUR_API_KEY with your actual API key
+    // API key
     let url = `https://v6.exchangerate-api.com/v6/226344872bdad1857d10cd75/latest/${fromCurrency.value}`;
 
     // Fetching API response and returning it as a parsed JS object
     fetch(url)
         .then(response => response.json())
         .then(result => {
-            let exchangeRate = result.conversion_rates[toCurrency.value]; // Use 'exchangeRate' instead of 'getExchangeRate'
-            let totalExchangeRate = (amountVal * exchangeRate).toFixed(2); // Use 'exchangeRate' for conversion
+            let exchangeRate = result.conversion_rates[toCurrency.value];
+            let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
             exchangeRateTxt.innerHTML = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
         })
         .catch(() => {
@@ -81,4 +81,3 @@ function getExchangeRate() {
             exchangeRateTxt.innerHTML = "Something went wrong.";
         });
 }
-
